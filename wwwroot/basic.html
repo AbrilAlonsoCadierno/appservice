@@ -3,10 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Azure App</title>
+    <title>Remove Element Example</title>
+    <style>
+        /* Optional: Add some styles */
+        #myElement {
+            background-color: lightcoral;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        #myOtherElement {
+            background-color: lightblue;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Azure App!</h1>
-    <p>This is a simple HTML app deployed on Azure.</p>
+
+    <div id="myElement">This element will be removed.</div>
+    <button onclick="removeElement()">Remove Element</button>
+    
+    <div id="myOtherElement">This element will lose its ID.</div>
+    <button onclick="removeID()">Remove ID</button>
+
+    <script>
+        function removeElement() {
+            var element = document.getElementById("myElement");
+            if (element) {
+                element.remove(); // This will remove the element from the DOM
+            }
+        }
+
+        function removeID() {
+            var element = document.getElementById("myOtherElement");
+            if (element) {
+                element.id = ""; // This will remove the ID from the element
+            }
+        }
+    </script>
 </body>
 </html>
